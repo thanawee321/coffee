@@ -69,7 +69,7 @@ $(document).ready(function () {
         $('#id_product_food').val(data[1]);
         $('#name_food').val(data[2]);
         $('#food_price').val(data[3]);
-        
+
 
 
         $('#edit_food_product').modal('show');
@@ -190,27 +190,42 @@ $(document).ready(function () {
     });
 
 
+
     $('#have_mat_coffee').change(function () {
 
-       var have = $(this).val();
+        var have = $(this).val();
+        //console.log(have + "\n");
 
-       $('#use_mat_coffee').change(function(){
-        var use = $(this).val();
-
-        
-        var total = have - use;
-        $('#total_mat_coffee').val(total);
+        $('#use_mat_coffee').change(function () {
+            var use = $(this).val();
+            var total = have - use;
+            //console.log(total);
 
 
-       });
-       
-       
-       
+            $('#total_mat_coffee').val(total);
+
+        });
     });
 
 
 
 
+
+    $('#have_mat_food').change(function () {
+
+        var have = $(this).val();
+        console.log(have);
+
+        $('#use_mat_food').change(function () {
+            var use = $(this).val();
+            var total = have - use;
+            console.log(total);
+
+
+            $('#total_mat_food').val(total);
+
+        });
+    });
 
 
     ///////////////////////////////////////////////////////////////////////////////////

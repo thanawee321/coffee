@@ -100,7 +100,7 @@ $result = mysqli_query($connect, $query);
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">เพิ่มรายการอาหาร</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">เพิ่มรายการวัตถุดิบกาแฟ</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -117,7 +117,7 @@ $result = mysqli_query($connect, $query);
                             <div class="was-validated">
                                 <div class="row">
                                     <div class="col">
-                                        <input type="text is-invalid" class="form-control mb-2" name="name_mat_coffee" required>
+                                        <input type="text " class="form-control mb-2" name="name_mat_coffee" required>
                                         <div class="invalid-feedback">
                                             กรุณาใส่ข้อมูล
                                         </div>
@@ -140,16 +140,16 @@ $result = mysqli_query($connect, $query);
                             </div>
                             <div class="row">
                                 <div class="col-3">
-                                    <input type="number" class="form-control mb-2" name="have_mat_coffee" id="have_mat_coffee">
+                                    <input type="number" class="form-control mb-2" name="have_mat_coffee" id="have_mat_coffee" required>
                                 </div>
                                 <div class="col-3">
-                                    <input type="number" class="form-control mb-2" name="use_mat_coffee" id="use_mat_coffee">
+                                    <input type="number" class="form-control mb-2" name="use_mat_coffee" id="use_mat_coffee" required>
                                 </div>
                                 <div class="col-3">
-                                    <input type="number" class="form-control mb-2" name="total_mat_coffee" id="total_mat_coffee" disabled>
+                                    <input type="number" class="form-control mb-2" name="total_mat_coffee" id="total_mat_coffee" readonly required>
                                 </div>
                                 <div class="col-3">
-                                    <select class="form-control " name="unit_mat_coffee" id="unit_mat_coffee">
+                                    <select class="form-control " name="unit_mat_coffee" id="unit_mat_coffee" required>
                                         <option>ขวด</option>
                                         <option>อัน</option>
                                         <option>ชิ้น</option>

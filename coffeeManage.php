@@ -2,7 +2,7 @@
 session_start();
 require 'connection/connect.php';
 require 'checkSession.php';
-
+include 'command.php';
 //รายการกาแฟ+ชื่อสถานะ
 /*SELECT product_coffee.id_product,product_coffee.coffee_product,product_coffee.hot_price,product_coffee.ice_price,status_coffee.status FROM product_coffee 
 INNER JOIN status_coffee ON product_coffee.id_status = status_coffee.id_status*/

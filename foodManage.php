@@ -2,6 +2,7 @@
 session_start();
 require 'connection/connect.php';
 require 'checkSession.php';
+include 'command.php';
 /*SELECT product_food.id_product_food,product_food.food_product,product_food.food_price,status_coffee.status FROM product_food INNER JOIN status_coffee ON product_food.id_status = status_coffee.id_status*/
 $query = "SELECT * FROM coffee.product_food";
 $result = mysqli_query($connect, $query);

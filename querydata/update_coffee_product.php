@@ -21,5 +21,6 @@ update($query);
 $message = $name_coffee_update."ที่ ID : ".$id_coffee_update;
 log_des($action,$message,$name);
 
+mysqli_close($connect);
 Header('Refresh:0; url=../coffeeManage.php');
 ?>

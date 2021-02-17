@@ -3,6 +3,7 @@
 
 $(document).ready(function () {
 
+
     var i = 1;
     $('#add').click(function () {
         i++;
@@ -226,6 +227,51 @@ $(document).ready(function () {
 
         });
     });
+
+
+
+    $('.price_product1').click(function () {
+
+        i++;
+        var name = $(this).attr('name');
+        var hot = $(this).attr('idhot');
+        var type = $(this).attr('hot');
+
+        if (hot !== null || hot !== "") {
+            $('#saleproduct').append(' <tr id="row' + i + '"><td>' + name +'('+type+')'+ '</td><td><input type="number" class="form-control" name="count[]" id="count[]" value="1"></td><td>' + hot + '</td><td><button id="' + i + '" class="btn btn-danger btn_remove">ลบ</button></td></tr>');
+        }
+
+        $('.btn_remove').click(function () {
+
+            var button_id = $(this).attr('id');
+            $("#row" + button_id + "").remove();
+
+        });
+
+    });
+
+
+    $('.price_product2').click(function () {
+        var name = $(this).attr('name');
+        var ice = $(this).attr('idice');
+        var type = $(this).attr('ice');
+
+
+
+        if (ice !== null || ice !== "") {
+            $('#saleproduct').append(' <tr id="row' + i + '"><td>' + name +'('+type+')'+ '</td><td><input type="number" class="form-control" name="count[]" id="count[]" value="1"></td><td>' + ice + '</td><td><button id="' + i + '" class="btn btn-danger btn_remove">ลบ</button></td></tr>');
+
+        }
+
+        $('.btn_remove').click(function () {
+
+            var button_id = $(this).attr('id');
+            $("#row" + button_id + "").remove();
+
+        });
+
+    });
+
 
 
     ///////////////////////////////////////////////////////////////////////////////////

@@ -23,6 +23,7 @@ insert($query);
 $message = $name_mat_food;
 log_des($action,$message,$name);
 
-//Header('Refresh:0; url=../rawMaterialfood.php');
+mysqli_close($connect);
+Header('Refresh:0; url=../rawMaterialfood.php');
 
 ?>

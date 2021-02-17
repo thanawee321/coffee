@@ -21,5 +21,5 @@ insert($query);
 
 $message = $name_mat_coffee;
 log_des($action,$message,$name);
-
+mysqli_close($connect);
 Header('Refresh:0; url=../rawMaterialcoffee.php');

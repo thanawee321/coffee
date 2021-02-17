@@ -13,5 +13,6 @@ delete($query);
 $message = $name_product." ที่อยู่ใน ID : $id_product";
 log_des($action,$message,$name);
 
+mysqli_close($connect);
 Header('Refresh:0; url=../coffeeManage.php');
 ?>

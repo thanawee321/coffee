@@ -31,9 +31,11 @@ if ($num >= 1) {
     if ($count >= 1) {
 
         echo "<script>alert('เพิ่มข้อมูล $count รายการ สำเร็จ')</script>";
+        mysqli_close($connect);
         Header('Refresh:0; url=../foodManage.php');
     } else {
         echo "<script>alert('เพิ่มรายการไม่สำเร็จเนื่องจากรายการนั้นน้อยกว่า 1 รายการ');</script>";
+        mysqli_close($connect);
         Header('Refresh:0; url=../foodManage.php');
     }
 }

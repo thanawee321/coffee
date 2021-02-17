@@ -6,7 +6,7 @@ $password = "";
 $database = "coffee";
 
 
-$connect = mysqli_connect($host,$user,$password,$database)or die("ERROR : ".mysqli_error($connect));
+$connect = mysqli_connect($host,$user,$password,$database)or die(mysqli_error($connect));
 
 
 

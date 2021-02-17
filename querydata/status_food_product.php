@@ -11,6 +11,6 @@ $query = "UPDATE coffee.product_food SET id_status = $id_status WHERE id_product
 update($query);
 
 
-
+mysqli_close($connect);
 Header('Refresh:0; url=../foodManage.php');
 ?>

@@ -18,6 +18,7 @@ update($query);
 $message = $name_food."ที่ ID : ".$id_product_food;
 log_des($action,$message,$name);
 
+mysqli_close($connect);
 Header('Refresh:0; url=../foodManage.php');
 
 

@@ -41,11 +41,11 @@ $result = mysqli_query($connect, $query);
         <br>
         <div class="row">
             <div class="col">
-                <table class="table table-hover table-bordered bordered-dark text-center table-striped" id="viewdatacoffee">
+                <table class="table table-hover table-bordered bordered-dark text-center table-striped" id="viewdatacoffee" width="100%">
 
                     <thead class="table-dark">
                         <tr>
-                            <th width="5%">ลำดับ</th>
+                            <th width="5%">#</th>
                             <th hidden>ID</th>
                             <th scope="col">เมนูกาแฟ</th>
                             <th scope="col">ร้อน</th>
@@ -54,6 +54,7 @@ $result = mysqli_query($connect, $query);
                             <th width="5%">แก้ไข</th>
                             <th width="5%">ลบ</th>
                             <th width="5%">สถานะ</th>
+
                             <!--<button class="btn btn-info"><i class="fas fa-spinner"></i></button>-->
 
                         </tr>

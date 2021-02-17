@@ -3,6 +3,7 @@ session_start();
 require 'connection/connect.php';
 require 'checkSession.php';
 include 'command.php';
+
 /*SELECT product_food.id_product_food,product_food.food_product,product_food.food_price,status_coffee.status FROM product_food INNER JOIN status_coffee ON product_food.id_status = status_coffee.id_status*/
 $query = "SELECT * FROM coffee.product_food";
 $result = mysqli_query($connect, $query);
@@ -33,17 +34,17 @@ $result = mysqli_query($connect, $query);
         <br>
         <div class="row">
             <div class="col">
-                <table class="table table-hover table-bordered bordered-dark text-center table-striped" id="viewFood">
+                <table class="table table-hover table-bordered bordered-dark text-center table-striped" id="viewFood" width="100%">
                     <thead class="table-dark">
                         <tr>
 
-                            <th width="5%">ลำดับ</th>
+                            <th width="5%">#</th>
                             <th hidden>ID</th>
                             <th scope="">ชื่อรายการอาหาร</th>
                             <th scope="">ราคา</th>
                             <th width="5%">แก้ไข</th>
                             <th width="5%">ลบ</th>
-                            <th width="10%">สถานะ</th>
+                            <th width="5%">สถานะ</th>
 
                         </tr>
 

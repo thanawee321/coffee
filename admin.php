@@ -4,8 +4,6 @@ require 'connection/connect.php';
 require 'checkSession.php';
 include 'command.php';
 
-
-
 ?>
 <!DOCTYPE html>
 <html>

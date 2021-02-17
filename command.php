@@ -2,6 +2,7 @@
 
 require 'connection/connect.php';
 
+ $username = $_SESSION['admin_name_login'];
 //ดูข้อมูลรายการกาแฟ
 $query_product_coffee = "SELECT product_coffee.id_product,product_coffee.coffee_product,product_coffee.hot_price,product_coffee.ice_price,status_coffee.status FROM product_coffee 
     INNER JOIN status_coffee ON product_coffee.id_status = status_coffee.id_status";
@@ -22,7 +23,7 @@ $query_material_food = "SELECT material_food.id_mat_food,material_food.name_mat_
 $result_material_food = mysqli_query($connect,$query_material_food);
 
 //log
-$query_product_log = "SELECT * FROM log ORDER BY id_log DESC LIMIT 7";
+$query_product_log = "SELECT * FROM coffee.log WHERE log.user_log = '$username' ORDER BY id_log DESC LIMIT 7";
 $result_product_log = mysqli_query($connect,$query_product_log);
 
 $query_member = "SELECT * FROM coffee.member";

@@ -21,6 +21,7 @@ if(isset($_POST['btn_login']) && $username && $password){
         $name_login = $row['name_login'];
         $status = $row['status_login'];
 
+        
         switch($status){
 
             case "admin":

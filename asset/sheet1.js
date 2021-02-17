@@ -238,19 +238,19 @@ $(document).ready(function () {
         var type = $(this).attr('hot');
 
         if (hot !== null || hot !== "") {
-            $('#saleproduct').append(' <tr id="row' + i + '"><td>' + name +'('+type+')'+ '</td><td><input type="number" class="form-control" name="count[]" id="count[]" value="1"></td><td>' + hot + '</td><td><button id="' + i + '" class="btn btn-danger btn_remove">ลบ</button></td></tr>');
+            $('#saleproduct').append(' <tr id="row' + i + '"><td>' + name +'('+type+')'+ '</td><td><input type="number" class="form-control" name="count[]" id="count[]" value="1"></td><td>' + hot + '</td><td><button id="' + i + '" class="btn btn-danger btn_remove1">ลบ</button></td></tr>');
         }
 
-        $('.btn_remove').click(function () {
+        $('.btn_remove1').click(function () {
 
-            var button_id = $(this).attr('id');
-            $("#row" + button_id + "").remove();
+            var button_id1 = $(this).attr('id');
+            $("#row" + button_id1 + "").remove();
 
         });
 
     });
 
-
+var j=1;
     $('.price_product2').click(function () {
         var name = $(this).attr('name');
         var ice = $(this).attr('idice');
@@ -259,14 +259,14 @@ $(document).ready(function () {
 
 
         if (ice !== null || ice !== "") {
-            $('#saleproduct').append(' <tr id="row' + i + '"><td>' + name +'('+type+')'+ '</td><td><input type="number" class="form-control" name="count[]" id="count[]" value="1"></td><td>' + ice + '</td><td><button id="' + i + '" class="btn btn-danger btn_remove">ลบ</button></td></tr>');
+            $('#saleproduct').append(' <tr id="row' + j + '"><td>' + name +'('+type+')'+ '</td><td><input type="number" class="form-control" name="count[]" id="count[]" value="1"></td><td>' + ice + '</td><td><button id="' + j + '" class="btn btn-danger btn_remove2">ลบ</button></td></tr>');
 
         }
 
-        $('.btn_remove').click(function () {
+        $('.btn_remove2').click(function () {
 
-            var button_id = $(this).attr('id');
-            $("#row" + button_id + "").remove();
+            var button_id2 = $(this).attr('id');
+            $("#row" + button_id2 + "").remove();
 
         });
 

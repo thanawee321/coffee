@@ -20,7 +20,7 @@ $result_product_coffee_sale = mysqli_query($connect, $query_product_coffee_sale)
 <body>
     <?php include('menu/menubar.php'); ?>
 
-    <div class="container">
+    <div class="container-fluid">
 
         <div class="row">
             <div class="col-6">
@@ -36,7 +36,7 @@ $result_product_coffee_sale = mysqli_query($connect, $query_product_coffee_sale)
                             <th>จัดการ</th>
                         </tr>
                         <tr>
-                            
+
                         </tr>
                     </table>
                 </div>
@@ -45,22 +45,27 @@ $result_product_coffee_sale = mysqli_query($connect, $query_product_coffee_sale)
 
 
                 <div class="container">
-                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
-                            <?php $i = 0;
-                            while ($row = mysqli_fetch_array($result_product_coffee_sale)) {
-                                ?>
-                                <div class="col mt-4"> <img src="image/coffee (1).jpg" class="mb-1" alt="Girl in a jacket" width="112" height="100"><button class="btn btn-success price_product1 " name="<?php echo $row['coffee_product'];?>" idhot="<?php echo $row['hot_price'];?>" hot="ร้อน">ร้อน</button><button class="btn btn-success ms-1 price_product2" name="<?php echo $row['coffee_product']; ?>" idice="<?php echo  $row['ice_price']; ?>" ice="เย็น">เย็น</button></div>
-                                
-                            <?php } ?>
+                    <div class="row row-cols-2 row-cols-sm-2 row-cols-md-5">
+                        <?php $i = 0;
+                        while ($row = mysqli_fetch_array($result_product_coffee_sale)) {
+                        ?>
+                            <div class="col mt-4">
+                                <img src="image/coffee (1).jpg" class="mb-1 responsive" alt="Girl in a jacket" width="112" height="100"><br>
+                                <input type="radio" class="select_hot ms-2" idhot="<?php echo $row['hot_price']; ?>" hot="ร้อน">ร้อน<input type="radio" class="btn btn-success ms-5 select_ice" idice="<?php echo $row['ice_price']; ?>" ice="เย็น">เย็น</input>
+                                <br>
+                                <button style="width:100%"type="button" class="btn btn-info" name="<?php echo $row['coffee_product']; ?>" id="<?php echo $row['coffee_product']; ?>">เพิ่ม</button>
+                            </div>
+
+                        <?php } ?>
 
                     </div>
-                    
-                       
 
 
 
 
-    
+
+
+
 
                 </div>
 

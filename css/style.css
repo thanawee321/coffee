@@ -203,3 +203,9 @@ background-color: rgb(210, 239, 240);
 
     background-color: red;
 }*/
+
+.responsive {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+  }

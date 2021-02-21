@@ -135,6 +135,37 @@ $(document).ready(function () {
     });
 
 
+
+    $('.status_mat_coffee').click(function () {
+
+
+        var id_coffee = $(this).attr('id_coffee');
+        var status_mat_coffee = $(this).attr('id');
+        var name_mat_coffee = $(this).attr('name');
+
+        console.log(id_coffee);
+        console.log(status_mat_coffee);
+
+        if(status_mat_coffee == 1){
+            $('#id_mat_coffee').val(id_coffee);
+            $('#status_material_coffee1').val(status_mat_coffee);
+            $('#name_mat_coffee1').val(name_mat_coffee);
+        }
+        else if (status_mat_coffee == 2){
+
+            $('#id_mat_coffee').val(id_coffee);
+            $('#status_material_coffee1').val(status_mat_coffee);
+            $('#name_mat_coffee1').val(name_mat_coffee);
+           
+
+        }
+
+
+
+
+    });
+
+
     $('.delete_coffee_product').click(function () {
 
         var id_product = $(this).attr('id');
@@ -190,6 +221,35 @@ $(document).ready(function () {
 
     });
 
+    $('.delete_material_coffee_product').click(function () {
+
+
+        var id_mat_coffee = $(this).attr('id');
+        var name_mat_coffee = $(this).attr('name');
+        console.log(id_mat_coffee);
+
+        $('.cfdelete_material_coffee_product').click(function () {
+
+            $.ajax({
+
+                url: "querydata/delete_coffee_material.php",
+                type: "GET",
+                data: { id_mat_coffee: id_mat_coffee ,name_mat_coffee: name_mat_coffee},
+                success: function (data) {
+
+                    window.location.reload();
+
+                }
+
+
+            });
+        });
+
+
+    });
+
+
+
 
 
     $('#have_mat_coffee').change(function () {
@@ -206,6 +266,25 @@ $(document).ready(function () {
             $('#total_mat_coffee').val(total);
 
         });
+    });
+
+    $('.edit_material_coffee').click(function () {
+
+        $tr = $(this).closest("tr");
+        var data = $tr.children("td").map(function () {
+            return $(this).text();
+        }).get();
+
+        console.log(data);
+        $('#id_mat').val(data[1]);
+        $('#edit_name_mat_coffee').val(data[2]);
+        $('#edit_have_mat_coffee').val(data[3]);
+        $('#edit_use_mat_coffee').val(data[4]);
+        $('#edit_total_mat_coffee').val(data[5]);
+        $('#edit_unit_mat_coffee').val(data[6]);
+
+        $('#edit_material_coffee_product').modal('show');
+
     });
 
 
@@ -228,49 +307,25 @@ $(document).ready(function () {
         });
     });
 
+    $('#edit_have_mat_coffee').change(function () {
+
+        var have = $(this).val();
+        console.log(have);
+
+        $('#edit_use_mat_coffee').change(function () {
+            var use = $(this).val();
+            var total = have - use;
+            console.log(total);
 
 
-    $('.price_product1').click(function () {
-
-        i++;
-        var name = $(this).attr('name');
-        var hot = $(this).attr('idhot');
-        var type = $(this).attr('hot');
-
-        if (hot !== null || hot !== "") {
-            $('#saleproduct').append(' <tr id="row' + i + '"><td>' + name +'('+type+')'+ '</td><td><input type="number" class="form-control" name="count[]" id="count[]" value="1"></td><td>' + hot + '</td><td><button id="' + i + '" class="btn btn-danger btn_remove1">ลบ</button></td></tr>');
-        }
-
-        $('.btn_remove1').click(function () {
-
-            var button_id1 = $(this).attr('id');
-            $("#row" + button_id1 + "").remove();
+            $('#edit_total_mat_coffee').val(total);
 
         });
-
     });
 
-var j=1;
-    $('.price_product2').click(function () {
-        var name = $(this).attr('name');
-        var ice = $(this).attr('idice');
-        var type = $(this).attr('ice');
 
 
 
-        if (ice !== null || ice !== "") {
-            $('#saleproduct').append(' <tr id="row' + j + '"><td>' + name +'('+type+')'+ '</td><td><input type="number" class="form-control" name="count[]" id="count[]" value="1"></td><td>' + ice + '</td><td><button id="' + j + '" class="btn btn-danger btn_remove2">ลบ</button></td></tr>');
-
-        }
-
-        $('.btn_remove2').click(function () {
-
-            var button_id2 = $(this).attr('id');
-            $("#row" + button_id2 + "").remove();
-
-        });
-
-    });
 
 
 
